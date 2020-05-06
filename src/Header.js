@@ -10,39 +10,39 @@ function handleChange(e) {
       element.style.display = "none";
     }
 
-    for (var i = 0; i < to_do.length; i++) {
-      if (to_do[i][1].toUpperCase().includes(search_value.toUpperCase())) {
-        todo_search.push(to_do[i]);
+    for (var index = 0; index < to_do.length; index++) {
+      if (to_do[index][1].toUpperCase().includes(search_value.toUpperCase())) {
+        todo_search.push(to_do[index]);
       }
-      if (to_do[i][2].toUpperCase().includes(search_value.toUpperCase())) {
-        todo_search.push(to_do[i]);
+      if (to_do[index][2].toUpperCase().includes(search_value.toUpperCase())) {
+        todo_search.push(to_do[index]);
       }
-      if (to_do[i][3].toUpperCase().includes(search_value.toUpperCase())) {
-        todo_search.push(to_do[i]);
+      if (to_do[index][3].toUpperCase().includes(search_value.toUpperCase())) {
+        todo_search.push(to_do[index]);
       }
-      for (var tag = 0; tag < to_do[i][4].length; tag++) {
-        if (to_do[i][4][tag].toUpperCase().includes(search_value.toUpperCase())) {
-          todo_search.push(to_do[i]);
+      for (var tag = 0; tag < to_do[index][4].length; tag++) {
+        if (to_do[index][4][tag].toUpperCase().includes(search_value.toUpperCase())) {
+          todo_search.push(to_do[index]);
         }
       }
     }
 
-    for (var i = 0; i < todo_search.length; i++) {
-      var element = document.getElementById(todo_search[i][0].toString());
-      element.style.display = "block";
+    for (var index_id = 0; index_id < todo_search.length; index_id++) {
+      var div_elemtn = document.getElementById(todo_search[index_id][0].toString());
+      div_elemtn.style.display = "block";
     }
 }
 
 function Header() {
   return (
-    <div class="w-full fixed bg-gray-600 z-40">
-      <div class="w-full absolute top-0 bg-gray-800">
-        <form class="w-full">
-          <div class="w-full flex items-end border-b border-b-2 border-teal-500 py-3">
-            <div class="text-gray-700 text-center w-15 mx-6">
-              <img src="https://cdn1.iconfinder.com/data/icons/summer-7/512/travel_lighthouse-512.png" alt="Smiley face" height="42" width="42"></img>
+    <div className="w-full fixed bg-gray-600 z-40">
+      <div className="w-full absolute top-0 bg-gray-800">
+        <form className="w-full">
+          <div className="w-full flex items-end border-b border-b-2 border-teal-500 py-3">
+            <div className="text-gray-700 text-center w-15 mx-6">
+              <img src="https://raw.githubusercontent.com/JosephRangel/search-app/master/public/lighthouse.png" alt="Smiley face" height="42" width="42"></img>
             </div>
-            <input id="search" class="xl:w-1/4 md:w-3/6 sm:w-3/6 ml-6 rounded p-2 text-gray-700" type="search" placeholder="Search..." autocomplete="off" onChange={handleChange}/>
+            <input id="search" className="xl:w-1/4 md:w-3/6 sm:w-3/6 ml-6 rounded p-2 text-gray-700" type="search" placeholder="Search..." autoComplete="off" onChange={handleChange}/>
           </div>
         </form>
       </div>

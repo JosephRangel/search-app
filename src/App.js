@@ -12,14 +12,14 @@ let to_do = [
 
 function Tag(props){
   return (
-    <span class='inline-block bg-gray-200 rounded-full px-2 text-sm font-semibold text-gray-700 m-1'>#{props.tag}</span>
+    <span className='inline-block bg-gray-200 rounded-full px-2 text-sm font-semibold text-gray-700 m-1'>#{props.tag}</span>
   );
 }
 
 function Page(props){
   if (props.link) {
     return (<a href={props.link} title="See on GitHub">
-      <img class='w-8 absolute right-0 mt-5 mr-2' src='https://img.icons8.com/windows/452/github.png'></img>
+      <img className='w-8 absolute right-0 mt-5 mr-2' src='https://cdn1.iconfinder.com/data/icons/picons-social/57/github_rounded-512.png' alt='github'></img>
     </a>)
   }
   return;
@@ -27,16 +27,16 @@ function Page(props){
 
 function Item(props) {
   return (
-    <div class="max-w-md rounded overflow-hidden shadow-lg m-6 bg-white hover:bg xl:w-1/3 sm:w-full md:w-1/3 relative" id={props.element[0]}>
+    <div className="max-w-md rounded overflow-hidden shadow-lg m-6 bg-white hover:bg xl:w-1/3 sm:w-full md:w-1/3 relative" id={props.element[0]}>
       <Page link={props.element[5]}/>
-      <div class='w-full h-2 bg-green-400'></div>
-      <div class='px-6 py-4'>
-        <div class='font-bold text-xl mb-2 truncate'>{props.element[1]}</div>
-        <p class='text-gray-700 text-base h-24 overflow-hidden'>
+      <div className='w-full h-2 bg-green-400'></div>
+      <div className='px-6 py-4'>
+        <div className='font-bold text-xl mb-2 truncate'>{props.element[1]}</div>
+        <p className='text-gray-700 text-base h-24 overflow-hidden'>
           {props.element[2]}
         </p>
       </div>
-      <div class='px-6 py-2 bg-indigo-600'>
+      <div className='px-6 py-2 bg-indigo-600'>
         {props.element[4].map((tag) => <Tag tag={tag} />)}
       </div>
     </div>
@@ -45,7 +45,7 @@ function Item(props) {
 
 function App() {
   return (
-    <div class="flex items-start justify-center flex-wrap bg-gray-200 z-0">
+    <div className="flex items-start justify-center flex-wrap bg-gray-200 z-0">
       { to_do.map((element) => <Item element={ element } />) }
     </div>
   );
